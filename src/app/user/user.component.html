@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let user of user">
+    <div class="d-flex align-items-center user-photo">
+      <img [src]="user.avatar_url+'&s=80'" [alt]="user.name"/>
+      <h1>@{{user.login}}</h1>
+    </div>
+    <div class="d-flex flex-column text-center">
+      <a routerLink="/user/{{user.id}}">
+        View Details
+      </a>
+      <a [href]="'https://github.com/'+user.login">
+        View on Github
+      </a>
+    </div>
+  </li>
+</ul>

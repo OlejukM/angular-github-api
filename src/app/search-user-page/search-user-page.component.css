@@ -1,0 +1,43 @@
+.search-user {
+  width: 100%;
+  border: 1px solid #000;
+  display: flex;
+  padding: 10px 100px;
+  justify-content: space-between;
+}
+
+li {
+  list-style: none;
+}
+
+.avatar img {
+  border-radius: 50%;
+}
+
+input {
+  height: 50px;
+  width: 25vw;
+  border: 1px solid #000;
+  outline: none;
+  text-align: center;
+  border-radius: 20px;
+}
+
+input::placeholder {
+  font-size: 24px;
+}
+
+button {
+  height: 51px;
+  width: 100px;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  outline: none;
+}
+
+button:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}

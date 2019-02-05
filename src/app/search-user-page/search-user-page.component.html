@@ -1,0 +1,10 @@
+<div class="search-user">
+  <h1>Search Users</h1>
+  <div>
+  <input [formControl]="findControl"
+         placeholder="username" />
+  </div>
+</div>
+<app-user *ngIf="user"
+          [user]="user"></app-user>
+<app-error *ngIf="error"></app-error>

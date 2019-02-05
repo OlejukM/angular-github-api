@@ -1,0 +1,17 @@
+.tech-magic-logo-text{
+  color: teal;
+}
+
+.navbar-links a{
+  margin-right: 50px;
+}
+
+.headerdivider{
+  border-left: 1px solid #38546d;
+  background: #16222c;
+  width: 1px;
+  height: 20px;
+  position: absolute;
+  right: 135px;
+  top: 20px;
+}
