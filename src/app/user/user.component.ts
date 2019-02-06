@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { User } from '../models/user.model';
-import { Router } from '@angular/router';
+import {Component, Input, OnInit} from '@angular/core';
+import {User} from '../models/user.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -12,7 +12,8 @@ export class UserComponent implements OnInit {
   @Input()
   user: User;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
   }

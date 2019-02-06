@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-welcome-page',
@@ -9,7 +9,8 @@ export class WelcomePageComponent implements OnInit {
 
   title = 'Magic Github Explorer';
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

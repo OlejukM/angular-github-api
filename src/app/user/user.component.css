@@ -1,19 +1,19 @@
-.users{
+.users {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.user-details{
+.user-details {
   width: 100%;
   text-align: right;
 }
 
-.user-photo img{
+.user-photo img {
   margin-right: 20px;
 }
 
-li{
+li {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -24,7 +24,7 @@ li{
   padding: 15px 50px;
 }
 
-img{
+img {
   width: 100px;
   height: 100px;
   border-radius: 50%;

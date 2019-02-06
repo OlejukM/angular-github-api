@@ -12,17 +12,20 @@ import {EMPTY} from 'rxjs';
 })
 
 export class SearchUserPageComponent implements OnInit {
-  findControl = new FormControl ();
+  findControl = new FormControl();
   error: Boolean = false;
   user: User;
-  constructor (private githubService: GithubService) {}
-  ngOnInit () {
+
+  constructor(private githubService: GithubService) {
+  }
+
+  ngOnInit() {
     this.findControl.valueChanges
-      .pipe (
-        filter (value => value.length > 2),
-        switchMap (value =>
-          this.githubService.getUser (value) .pipe (
-            catchError (err => {
+      .pipe(
+        filter(value => value.length > 2),
+        switchMap(value =>
+          this.githubService.getUser(value).pipe(
+            catchError(err => {
               this.user = null;
               this.error = true;
               return EMPTY;
@@ -30,7 +33,7 @@ export class SearchUserPageComponent implements OnInit {
           )
         )
       )
-      .subscribe (user => {
+      .subscribe(user => {
         this.user = user.items;
         this.error = false;
       });

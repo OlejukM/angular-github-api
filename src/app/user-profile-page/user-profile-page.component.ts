@@ -15,18 +15,23 @@ export class UserProfilePageComponent implements OnInit {
   user: User;
   public userLogin;
   public userInfo;
+  public userRepos;
 
   constructor(
     private githubService: GithubService,
     private route: ActivatedRoute,
     private location: Location
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.userLogin = this.route.snapshot.paramMap.get('login');
     this.githubService.getUserInfo(this.userLogin)
       .subscribe(info => this.userInfo = info);
+    // this.githubService.getUserRepos(this.userLogin)
+    //   .subscribe(repos => this.userRepos = repos);
   }
+
   goBack(): void {
     this.location.back();
   }
