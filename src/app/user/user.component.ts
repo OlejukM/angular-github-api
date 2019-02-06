@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
   }
 
   onSelect(user) {
-    this.router.navigate(['/user', user.id]);
+    this.router.navigate(['/user', user.login]);
   }
 
 }

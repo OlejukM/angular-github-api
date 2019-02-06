@@ -15,4 +15,9 @@ export class GithubService {
     const url = `https://api.github.com/search/users?q=${name}`;
     return this.http.get <User> (url);
   }
+
+  getUserInfo(name: any): Observable <User> {
+    const url = `https://api.github.com/users/${name}`;
+    return this.http.get <User> (url);
+  }
 }

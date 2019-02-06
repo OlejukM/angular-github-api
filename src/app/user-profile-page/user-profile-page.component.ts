@@ -13,7 +13,8 @@ import {GithubService} from '../services/github.service';
 export class UserProfilePageComponent implements OnInit {
   @Input()
   user: User;
-  public userId;
+  public userLogin;
+  public userInfo;
 
   constructor(
     private githubService: GithubService,
@@ -22,15 +23,10 @@ export class UserProfilePageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.userId = parseInt(this.route.snapshot.paramMap.get('id'));
-    // this.getUserId();
+    this.userLogin = this.route.snapshot.paramMap.get('login');
+    this.githubService.getUserInfo(this.userLogin)
+      .subscribe(info => this.userInfo = info);
   }
-  //
-  // getUserId(): void {
-  //   const id = +this.route.snapshot.paramMap.get('id');
-  //   this.githubService.getUserId(id)
-  //     .subscribe(user => this.user = user);
-  // }
   goBack(): void {
     this.location.back();
   }
