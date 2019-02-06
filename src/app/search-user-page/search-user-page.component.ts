@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {GithubService} from '../services/github.service';
 import {User} from '../models/user.model';
-import {filter, switchMap, debounceTime, catchError} from 'rxjs/operators';
+import {filter, switchMap, catchError} from 'rxjs/operators';
 import {EMPTY} from 'rxjs';
 
 @Component({
@@ -20,7 +20,6 @@ export class SearchUserPageComponent implements OnInit {
     this.findControl.valueChanges
       .pipe (
         filter (value => value.length > 2),
-        debounceTime (1000),
         switchMap (value =>
           this.githubService.getUser (value) .pipe (
             catchError (err => {

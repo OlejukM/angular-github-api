@@ -1,8 +1,8 @@
-import {Component, Input, ChangeDetectionStrategy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {User} from '../models/user.model';
-// import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-// import { GithubService } from '../services/github.service';
+import {ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
+import {GithubService} from '../services/github.service';
 
 @Component({
   selector: 'app-user-profile-page',
@@ -13,14 +13,16 @@ import { Location } from '@angular/common';
 export class UserProfilePageComponent implements OnInit {
   @Input()
   user: User;
+  public userId;
 
   constructor(
-    // private githubService: GithubService,
-    // private route: ActivatedRoute,
+    private githubService: GithubService,
+    private route: ActivatedRoute,
     private location: Location
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.userId = parseInt(this.route.snapshot.paramMap.get('id'));
     // this.getUserId();
   }
   //

@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {User} from '../models/user.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from '../models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -11,9 +12,13 @@ export class UserComponent implements OnInit {
   @Input()
   user: User;
 
-  constructor() { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
+  }
+
+  onSelect(user) {
+    this.router.navigate(['/user', user.id]);
   }
 
 }
