@@ -1,7 +1,19 @@
-<h1>{{userLogin}}</h1>
-<h1>{{userInfo.name}}</h1>
-<h1>{{userInfo.created_at}}</h1>
-<h1>{{userInfo.location}}</h1>
-<h1>{{userInfo.company}}</h1>
-<h1>{{userInfo.email}}</h1>
-<button (click)="goBack()">Go Back</button>
+<div class="container user-details-container mt-5">
+  <div class="user-details-header">
+    <img [src]="userInfo.avatar_url+'&s=80'" [alt]="userInfo.name"/>
+    <h1>@{{userLogin}}</h1>
+    <a [href]="'https://github.com/'+userInfo.login">
+      View on Github
+    </a>
+  </div>
+  <div class="user-details-body">
+    <ul>
+    <li>{{userInfo.name}}</li>
+    <li>{{userInfo.created_at}}</li>
+    <li>{{userInfo.location}}</li>
+    <li>{{userInfo.company}}</li>
+    <li>{{userInfo.email}}</li>
+    </ul>
+  </div>
+  <button (click)="goBack()">Go Back</button>
+</div>
